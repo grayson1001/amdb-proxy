@@ -276,7 +276,7 @@ public class DBServiceTest {
     }
 
     @Override
-    public List<Map<String, Object>> selectTableDataByNum(String table_name, Integer num, int preIndex, int pageSize) {
+    public List<Map<String, Object>> selectTableDataByNum(String table_name, long num, long preIndex, int pageSize) {
         // TODO Auto-generated method stub
         return null;
     }

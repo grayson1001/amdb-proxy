@@ -11,14 +11,14 @@ package org.bcos.amdb.dto;
  */
 public class SelectByNumRequest {
     
-    private Integer num;
+    private long num;
     
     private String tableName;
 
     /**
      * @return the num
      */
-    public Integer getNum() {
+    public long getNum() {
         return num;
     }
 

@@ -188,13 +188,13 @@ public class DBService {
             tableName = getDetailTableName(request.getTableName());
         }
         
-        int preIndex = 0;
+        long preIndex = 0;
         int pageCount = PAGE_SIZE;
         List<Map<String, Object>> resultMap = new ArrayList<>();
         while(pageCount == PAGE_SIZE){
             List<Map<String, Object>> tempResult = dataMapper.selectTableDataByNum(tableName, request.getNum(), preIndex, PAGE_SIZE);
             if(tempResult != null && tempResult.size() != 0){
-                preIndex = (int) tempResult.get(tempResult.size()-1).get("_id_");
+                preIndex = Long.valueOf(String.valueOf(tempResult.get(tempResult.size()-1).get("_id_")));
                 resultMap.addAll(tempResult);
                 pageCount = tempResult.size();
             }else{
